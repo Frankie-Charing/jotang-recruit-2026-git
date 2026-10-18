@@ -1,0 +1,8 @@
+name,hidden,n_hidden,activation,optimizer,lr,val_acc,val_loss,params,time_s
+base,32,1,relu,adam,0.01,0.9437,0.0934,162,0.4
+hidden=8,8,1,relu,adam,0.01,0.95,0.1194,42,0.4
+hidden=64,64,1,relu,adam,0.01,0.9625,0.0838,322,0.5
+n_hidden=2,32,2,relu,adam,0.01,0.9688,0.0788,1218,0.7
+activation=tanh,32,1,tanh,adam,0.01,0.95,0.1078,162,0.5
+lr=0.1,32,1,relu,adam,0.1,0.9625,0.078,162,0.4
+optimizer=sgd,32,1,relu,sgd,0.1,0.8812,0.2841,162,0.4
