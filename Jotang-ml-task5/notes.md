@@ -81,3 +81,16 @@ pip install ftfy regex tqdm
 pip install git+https://github.com/openai/CLIP.git
 python clip_demo.py
 ```
+
+### 实际运行结果（RN50）
+
+用 4 张真实/网络图片（猫、狗、红色跑车、海滩）跑通了完整推理，并加入干扰项 `a photo of a black cat`。归一化后余弦相似度如下：
+
+```text
+img0(猫)   最接近 a photo of a cat      相似度 0.207
+img1(狗)   最接近 a photo of a dog      相似度 0.177
+img2(红车) 最接近 a photo of a red car  相似度 0.260
+img3(海滩) 最接近 a photo of a beach    相似度 0.214
+```
+
+4 张图全部配对正确，干扰描述没有抢到任何一张图的第一名，说明 CLIP 对“关键信息错误但内容相近”的负样本仍能较好分辨。相似度热力图见 `figs/clip_similarity.png`。
